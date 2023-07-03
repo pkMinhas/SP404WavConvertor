@@ -32,3 +32,7 @@ For example, if the script is in `~/awesomeTools` directory, enter
 
 ## Feedback/Issues/Appreciation
 Contact me via [email](mailto:preet@marchingbytes.com)
+
+Subscribe to my [Youtube Channel](https://www.youtube.com/@BigSmilezBeats)
+
+Follow me on [Instagram](https://www.instagram.com/bigsmilezbeats/)
