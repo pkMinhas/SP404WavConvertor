@@ -15,7 +15,7 @@ Since manual conversion of samples/loops takes a long time, I decided to automat
 
 
 ## Installation instructions
-This utility is a python script which uses ffmpeg under the hood. In order to run this, ensure that you have the following pre-requesites installed on your system:
+This utility is a python script which uses ffmpeg under the hood. In order to run this, ensure that you have the following pre-requisites installed on your system:
 1. latest version of [python](https://www.python.org/downloads/)
 2. [ffmpeg](https://ffmpeg.org/download.html)
 3. [ffmpeg-python](https://github.com/kkroening/ffmpeg-python)
