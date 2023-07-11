@@ -36,3 +36,14 @@ Contact me via [email](mailto:preet@marchingbytes.com)
 Subscribe to my [Youtube Channel](https://www.youtube.com/@BigSmilezBeats)
 
 Follow me on [Instagram](https://www.instagram.com/bigsmilezbeats/)
+
+
+#
+#
+
+# Bonus Utility: Name Fixer
+Removes provided phrases from the filenames. Sample packs downloaded from popular providers have long file names of format `<Provider>-<Pack>-<SampleName>.wav`. This makes it harder to select samples on the tiny SP screen. Use this nameFixer to remove the unwanted parts from the names. For example, **Cymatics - Cicada Guitar Loop - 90 BPM D# Min Layer 1.wav** will be renamed to **Cicada Guitar Loop-90 BPM D# Min Layer 1.wav**
+
+## Usage instructions
+1. Open `nameFixer.py` and edit the `wordsToRemove` array to add words that you wish to remove from the renamed files.
+2. Rest is same as above. Just replace the script name `convertor.py` with `nameFixer.py`
