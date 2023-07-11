@@ -1,12 +1,15 @@
-import shutil
+# Removes all provided phrases from the filenames. Sample packs downloaded from popular providers have long file names of format <Provider>-<Pack>-<SampleName>.wav.
+# Edit the wordsToRemove dictionary to add words that you wish to remove from the renamed files
 import os
 import sys
 
 finalMessageArr = []
 
+# Edit this line to remove other words/phrases/characters from the file names
+wordsToRemove = ["Cymatics","ADSR","Beatclub"]
+
 def diveInto(directory):
     print(f"Processing {directory}")
-    dirName = directory.split(os.sep)[-1]
     processed = 0
     skipped = 0
 
@@ -21,21 +24,30 @@ def diveInto(directory):
         
         # checking if it is a file
         if os.path.isfile(f):
-            # remove repeated name "Cymatics", "Cymatics - ", "BC" etc...
-            # Edit this line to remove other words/phrases/characters from the file names
-            fixedFilename = filename.replace("Cymatics -","").replace("Cymatics", "").replace("-ADSR","").replace("ADSR","").replace(" - ", "-").strip()
+            fixedFilename = filename
+            # remove unwanted words from string
+            for word in wordsToRemove:
+                fixedFilename = fixedFilename.replace(word,"")
+            
+            fixedFilename = fixedFilename.strip()
+
+            if fixedFilename.startswith("-"):
+                fixedFilename = fixedFilename[1:]
+
+            fixedFilename = fixedFilename.replace(" - ","-").strip()
+            
             if fixedFilename == filename:
                 skipped = skipped + 1
             else:
                 newFilePath = os.path.join(directory, fixedFilename)
                 print(f"Rename {filename} to {fixedFilename}")
-                tempFile = os.rename(f,newFilePath)
+                os.rename(f,newFilePath)
                 processed = processed + 1
 
     finalMessageArr.append(f"{directory} - files processed: {processed}, skipped: {skipped}")
 
 
-# Renames all files in dir (recursive). Removed common sample pack provider names from files
+# Renames all files in dir (recursive). Removes common sample pack provider names from filenames.
 argLen = len(sys.argv)
 if argLen != 2:
     print("Please provide input directory path")
