@@ -18,7 +18,7 @@ def diveInto(directory):
         if os.path.isdir(f):
             diveInto(f)
 
-        if filename.startswith("._") or not filename.endswith(".wav"):
+        if filename.startswith("._") or not filename.lower().endswith(".wav"):
             continue
         
         # checking if it is a file
