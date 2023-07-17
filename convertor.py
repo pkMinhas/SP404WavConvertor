@@ -24,21 +24,25 @@ def diveInto(directory):
         # checking if it is a file
         if os.path.isfile(f):
             print(f)
-            probe = ffmpeg.probe(f)
-            audioInfo = probe["streams"][0]
-            codec_name = audioInfo["codec_name"]
-            sample_rate = audioInfo["sample_rate"]
-            print(codec_name,sample_rate)
-            if codec_name == "pcm_s16le" and sample_rate == "48000":
-                print("Already meets requirement, skipping...")
+            try:
+                probe = ffmpeg.probe(f)
+                audioInfo = probe["streams"][0]
+                codec_name = audioInfo["codec_name"]
+                sample_rate = audioInfo["sample_rate"]
+                print(codec_name,sample_rate)
+                if codec_name == "pcm_s16le" and sample_rate == "48000":
+                    print("Already meets requirement, skipping...")
+                    skipped = skipped + 1
+                    continue
+                stream = ffmpeg.input(f)
+                tempFile = os.path.join(tempfile.gettempdir(),filename)
+                ffmpeg.output(stream, tempFile, acodec="pcm_s16le",ar="48000").run(overwrite_output=True)
+                #overwrite original with tempfile
+                shutil.move(tempFile, f)
+                processed = processed + 1
+            except:
+                print(f"[!!] Some exception occurred while processing {filename}")
                 skipped = skipped + 1
-                continue
-            stream = ffmpeg.input(f)
-            tempFile = os.path.join(tempfile.gettempdir(),filename)
-            ffmpeg.output(stream, tempFile, acodec="pcm_s16le",ar="48000").run(overwrite_output=True)
-            #overwrite original with tempfile
-            shutil.move(tempFile, f)
-            processed = processed + 1
 
     finalMessageArr.append(f"{directory} - files processed: {processed}, skipped: {skipped}")
 
