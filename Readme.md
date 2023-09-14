@@ -47,3 +47,10 @@ Removes provided phrases from the filenames. Sample packs downloaded from popula
 ## Usage instructions
 1. Open `nameFixer.py` and edit the `wordsToRemove` array to add words that you wish to remove from the renamed files.
 2. Rest is same as above. Just replace the script name `convertor.py` with `nameFixer.py`
+
+#
+#
+
+# Bonus 2: Collator
+Collates samples from across folders into a collection, categorized as per the names defined in categories array
+Script: `collator.py`
