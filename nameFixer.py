@@ -6,7 +6,7 @@ import sys
 finalMessageArr = []
 
 # Edit this line to remove other words/phrases/characters from the file names
-wordsToRemove = ["Cymatics","ADSR","Beatclub"]
+wordsToRemove = ["Cymatics","ADSR","Beatclub","HipHop","BoomBap", "VIP"]
 
 def diveInto(directory):
     print(f"Processing {directory}")
