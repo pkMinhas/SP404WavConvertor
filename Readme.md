@@ -54,3 +54,11 @@ Removes provided phrases from the filenames. Sample packs downloaded from popula
 # Bonus 2: Collator
 Collates samples from across folders into a collection, categorized as per the names defined in categories array
 Script: `collator.py`
+
+
+#
+#
+
+# Bonus 3: metadataPrepender
+Appends beat metadata such as bpm and scale info to start of beat name, coz the sp screen does not show complete names when [Remain] is pressed.
+Script: `metadataPrepender.py`
