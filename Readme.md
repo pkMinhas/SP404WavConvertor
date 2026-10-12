@@ -13,6 +13,14 @@ Since manual conversion of samples/loops takes a long time, I decided to automat
 4. Does not alter the file if it already is 16bit, 48kHz
 5. Uses industry-standard ffmpeg library under the hood
 
+## Do you love this project? Sponsor it!
+
+<p align="center">
+<a href="https://github.com/sponsors/pkminhas"><img src="https://img.shields.io/badge/Sponsor_on_GitHub-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white&style=for-the-badge" alt="Sponsor on GitHub"></a>
+  <a href="https://ko-fi.com/pkminhas"><img src="https://img.shields.io/badge/Support_on_Ko--fi-%E2%98%95-ff5e5b?logo=kofi&logoColor=white&style=for-the-badge" alt="Support on Ko-fi"></a>
+</p>
+
+
 
 ## Installation instructions
 This utility is a python script which uses ffmpeg under the hood. In order to run this, ensure that you have the following pre-requisites installed on your system:
